@@ -1,31 +1,14 @@
+h1{
+  text-align: center;
+  color : salmon;
+  font-family : Helvetica;
+  font-size: 90px;
+}
 body{
-  background-color: lightgrey;
-  text-decoration: none;
-  color: salmon;
-  font-family: Helvetica;
-  font-size:30px;
+  background-color: #465775;
 }
-
-nav {
-  list-style-type: none;
-  position: fixed;
-  background-color: gray;
-  top:0;
-  width: 100%;
-  left: 0;
-  font-family: Helvetica;
-  font-size: 20px;
-}
-li {
-  display: inline;
-  padding: 15px;
-  float: right;
-}
-li:hover {
-  background-color: salmon;
-}
-
-a {
-  text-decoration: none;
-  color: salmon;
+img:hover {
+  height: 1100px;
+  border radius: 70%;
+  
 }
