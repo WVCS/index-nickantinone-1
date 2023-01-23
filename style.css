@@ -12,3 +12,23 @@ img:hover {
   border radius: 70%;
   
 }
+
+nav{
+  list-style-type: none;
+  position: fixed; 
+  width: 100vw;
+  background-color: lightgrey;
+  left: 0;
+  top:0;
+}
+li{
+  display:inline;
+  float:right;
+  padding: 11px;
+}
+a{
+  text-decoration: none;
+  color: salmon
+}
+li:hover{
+  font-weight:bold
