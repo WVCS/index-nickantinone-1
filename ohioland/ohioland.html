@@ -74,80 +74,106 @@
 </html>
 
 <style>
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ohioland</title>
-</head>
-<body>
-<nav>
-  <ul>
-    <li onclick="navigate(this)"><a href="#" class="active"><i class="fas fa-home" aria-hidden="true"></i> Tickets</a></li>
-    <li onclick="navigate(this)"><a href="#">Merchandise</a></li>
+h1{
+  font-family: Helvetica;
+  color: white;
+  text-shadow: 2px 2px 5px white;
+}
 
- 
-    
-    <center><li onclick="navigate(this)" class="logo"><a href="#"><img src="https://raw.githubusercontent.com/WVCS/index-nickantinone-1/main/ohioland/ohioland%20(1).png"width=100%;></a></li></center>
-    
-    
-    <li onclick="navigate(this)"><a href="#">Places to Stay</a></li>
-    <li onclick="navigate(this)"><a href="#">FAQ</a></li>
+body{
+  background-color: grey;
+}
+nav{
+  list-style-type: none;
+  position: fixed; 
+  width: 100vw;
+  background-color: #354f52;
+  left: 0;
+  top:0;
+  z-index:100;
+  text-shadow: 2px 2px 5px white;
+}
+.navli{
+  display:inline;
+  float:right;
+  padding: 15px;
+}
+a{
+  text-decoration: none;
+  color: white;
+  font-family: Helvetica;
+}
+* {box-sizing:border-box}
 
-  </ul>
-</nav>
-    
-    
-  </nav> 
-  
-    <br><br><br><br><br><br><br>
-  <center><img src="https://i-cdn.embed.ly/1/display?key=fd92ebbc52fc43fb98f69e50e7893c13&url=http%3A%2F%2Fi.imgur.com%2FB3gzNzT.gif%3Fnoredirect"width=60%></center>
-  
-  
-  <br>
-  <center><h1> Our Amazing Rides! </h1></center>
-      <!-- Slideshow container -->
-<center><div class="slideshow-container">
+nav img {
+  max-width: 200px;
+}
 
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <div class="numbertext"></div>
-    <img src="https://i.ytimg.com/vi/pMDMiSPuuDg/maxresdefault.jpg" style="width:35%">
-  </div>
+nav ul {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+/*   border: red 1px solid; */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
 
-  <div class="mySlides fade">
-    <div class="numbertext"></div>
-    <img src="https://i.ytimg.com/vi/GWwqeOqlPSs/maxresdefault.jpg" style="width:35%">
-  </div>
+nav li {
+/*   border: 1px yellow solid; */
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
 
-  <div class="mySlides fade">
-    <div class="numbertext"></div>
-    <img src="https://i.ytimg.com/vi/kiU392nNWK0/maxresdefault.jpg" style="width:35%">
-  </div>
+nav a {
+  text-decoration: none;
+  color: lightblue;
+  margin: 0;
+  padding: 0;
+}
 
+nav a:hover {
+/*   background: bisque;
+  color: black; */
+  transition: .75s;
+  color: #FFFFFF;
+text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+}
 
-    </div></center>
-    
-    <button onclick="topFunction()" id="topBtn"> SCROLL TO TOP </button>
+.logo a:hover{
+  background: black;
+}
 
-  <br><br><br>
-  
-  <center><h1>Contact Our Staff</h1></center>
-  
-     <center><form onsubmit="alert('You have been added')">
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" value=""><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" value=""><br><br>
-       <input type="submit" value="Submit"></center>
-</form> 
-  
-    <body style="font-family:Verdana;">
-  
-</body>
-</html>
+.main span::before {
+  content: "\a";
+  white-space: pre;
+}
+
+img {
+  border-radius: 5%;
+}
+#topBtn{
+  position: fixed;
+  bottom: 5%;
+  right:4%;
+  font-size:24px;
+  background-color: #354f52;
+  border-radius: 8px;
+  padding:10px;
+  display:none;
+  color: white;
+  font-size: 14px;
+}
+#topBtn:hover{
+  border: white 23px;
+}
+label{
+  color:white;
+  font-family: Helvetica;
+  text-shadow: 2px 2px 5px white;
+
+}
 </style>
 
 
