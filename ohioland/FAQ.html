@@ -13,11 +13,18 @@
 
  
     
-    <center><li onclick="navigate(this)" class="logo"><a href="#"><img src="https://raw.githubusercontent.com/WVCS/index-nickantinone-1/main/ohioland/ohioland%20(1).png"width=100%;></a></li></center>
+    <center><li onclick="navigate(this)" class="logo"><a href="#"><img id="myHeader" src="https://raw.githubusercontent.com/WVCS/index-nickantinone-1/main/ohioland/ohioland%20(1).png"></a></li></center>
     
     
   </ul>
 </nav>
+  
+  <br><br><br><br><br><br>
+<div class="grid-container">
+  <div class="grid-item"><h1>Are the rides good?</h1></h1><br><h1>No.</h1></div>
+  <div class="grid-item"><h1>Are the hotels nice?</h1><br><h1>Nah</h1></div>
+  <div class="grid-item"><h1>It is worth the trip?</h1><br><h1>Hecks no</h1></div>
+</div>
   </html>
   
   <style>
@@ -99,4 +106,27 @@ text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 3
 
 img {
   border-radius: 5%;
+  width:75%;
+}
+  
+  
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 20px;
+  padding: 20px;
+  justify-content: space-evenly;
+}
+
+.grid-item {
+  font-size: 20px;
+  text-align: center;
+  font-family: Helvetica;
+  color:white;
+}
+
+#myHeader{
+  width:100%
+}
   </style>
