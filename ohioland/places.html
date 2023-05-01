@@ -13,15 +13,22 @@
 
  
     
-    <center><li onclick="navigate(this)" class="logo"><a href="#"><img src="https://raw.githubusercontent.com/WVCS/index-nickantinone-1/main/ohioland/ohioland%20(1).png"width=100%;></a></li></center>
+    <center><li onclick="navigate(this)" class="logo"><a href="#"><img id="myHeader" src="https://raw.githubusercontent.com/WVCS/index-nickantinone-1/main/ohioland/ohioland%20(1).png"></a></li></center>
     
     
   </ul>
 </nav>
+  
+  <br><br><br><br><br><br>
+<div class="grid-container">
+  <div class="grid-item"><img src="https://abandonedkansai.files.wordpress.com/2014/10/dirty-hotel-hallway.jpg"><br><h1>The Ohio Grand</h1></div>
+  <div class="grid-item"><img src="https://d.newsweek.com/en/full/1976069/file-photo-moldy-room.jpg"><br><h1>Ohioan Suites</h1></div>
+  <div class="grid-item"><img src="https://townsquare.media/site/385/files/2023/04/attachment-RS48485_GettyImages-147413439-scr.jpg"><br><h1>Nicest Hotel in Ohio</h1></div>
+</div>
   </html>
   
   <style>
-  h1{
+h1{
   font-family: Helvetica;
   color: white;
   text-shadow: 2px 2px 5px white;
@@ -99,4 +106,27 @@ text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 3
 
 img {
   border-radius: 5%;
+  width:75%;
+}
+  
+  
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 20px;
+  padding: 20px;
+  justify-content: space-evenly;
+}
+
+.grid-item {
+  font-size: 20px;
+  text-align: center;
+  font-family: Helvetica;
+  color:white;
+}
+
+#myHeader{
+  width:100%
+}
   </style>
