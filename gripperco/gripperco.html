@@ -1,1 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gripper Co.</title>
+  <link rel="icon" href="https://github.com/WVCS/index-nickantinone-1/blob/main/grippers/Green%20Modern%20Fashion%20Store%20Logo%20(2).png?raw=true">
+</head>
+<body>
+<nav>
+  <ul>
+  
+    <li onclick="navigate(this)"><a href="#"><div id="entireDiv">
+  <form autocomplete="off" action="https://www.google.com">
+    <div class="autocomplete">
+      <input id="myInput" type="text" name="Euro Garage"
+             placeholder="Search...">
+    </div>
+  </form></a></li>
+ 
+    
+    <center><li onclick="navigate(this)" class="logo"><a href="#"><img id="myHeader" src="https://github.com/WVCS/index-nickantinone-1/blob/main/grippers/Green%20Modern%20Fashion%20Store%20Logo%20(2).png?raw=true"width=100%;></a></li></center>
+    
+    
+  <li onclick="navigate(this)"><a href="#" class="active"><i class="fas fa-home" aria-hidden="true"></i><img src="https://github.com/WVCS/index-nickantinone/blob/main/cart.png?raw=true"height=10%></a></li>
+    </div>
+  </form></a></li>
 
+  </ul>
+</nav>
+
+  <br><br><br><br><br><br><br><br><br><br><br>
+
+  <h2>New Arrivals</h2>
+    
+    <div class="grid-container">
+  <div class="grid-item"><img src="https://m.media-amazon.com/images/I/81r-DoWAUNL.jpg"></h2><br><h2>Lemon Peppa Steppas</h2></div>
+  <div class="grid-item"><img src="https://images.saymedia-content.com/.image/t_share/MTc2MjY2NDM2Mjc1MjgzMTM0/25-unusual-shoes.jpg"><br><h2>Johnsons</h2></div>
+  <div class="grid-item"><img src="https://pixy.org/src/65/655914.jpg"><br><h2>Johnson v2's</h2></div>
+</div>
+  
+<h2>Our Mission</h2>
+
+  </body>
+    
+  </nav> 
+</html>
+
+<style>
+  h1{
+  font-family: Helvetica;
+  color: white;
+  text-shadow: 2px 2px 5px white;
+}
+h2 {
+  margin-left: 45%;
+  color:black;
+}
+body{
+  background-color: ;
+}
+img{
+  height:15%;
+}
+nav{
+  list-style-type: none;
+  width: 100vw;
+  background-color: #52796f;
+  left: 0;
+  top:0;
+  z-index:100;
+  text-shadow: 2px 2px 5px ;
+  position:fixed;
+
+}
+.navli{
+  display:inline;  
+  right: 0;
+  padding: 15px;
+}
+a{
+  text-decoration: none;
+  font-family: Helvetica;
+}
+* {box-sizing:border-box}
+
+nav img {
+  max-width: 200px;
+}
+
+nav ul {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+/*   border: red 1px solid; */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+/*   border: 1px yellow solid; */
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+nav a:hover {
+/*   background: bisque;
+  color: black; */
+  transition: .75s;
+  color: #FDE27E;
+}
+
+.main span::before {
+  content: "\a";
+  white-space: pre;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 20px;
+  padding: 20px;
+  justify-content: space-evenly;
+  margin-right:0%;
+}
+
+.grid-item {
+  font-size: 17px;
+  text-align: center;
+}
+
+#myHeader{
+  width:100%
+}
+#myHeader{
+  width:100%
+}
+
+
+#myInput{
+  width: 90%;
+  background-color: white;
+}
+
+#entireDiv {
+  position: fixed;
+  right: 1;
+}
+div {
+    cursor:grabbing;}
+.city{
+  width:10%;
+  border-radius: 5%;
+  
+
+}
+</style>
+
+<script>
+  function autocomplete(inp, arr) {
+
+  var currentFocus;
+
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+
+      this.parentNode.appendChild(a);
+
+      for (i = 0; i < arr.length; i++) {
+
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+
+          b = document.createElement("DIV");
+
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+
+          b.addEventListener("click", function(e) {
+
+              inp.value = this.getElementsByTagName("input")[0].value;
+
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        currentFocus++;
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        currentFocus--;
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        e.preventDefault();
+        if (currentFocus > -1) {
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    if (!x) return false;
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+var autoAnswers = ["Lemon Peppa Steppas", "Johnsons", "Johnson V2s", "4", "5", "6", "7", "8", "9", "10", "11", "12",];
+
+autocomplete(document.getElementById("myInput"), autoAnswers);
+
+</script>
