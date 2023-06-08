@@ -3,24 +3,35 @@
 <head>
   <br>
   <title>Lacrosse</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/145/145188.png">
 </head>
+  <br><br><br><br><br><br><br><br><br>
   <center><h1> Lacrosse</h1></center>
 <body>
   <nav>
-    <li class = "navli"><a href = "https://www.powayusd.com/en-US/Schools/HS/WVHS/Calendars/Schedules/Bell-Schedule"> WESTVIEW SCHEDULE</li>
-    <li class = "navli"><a href = "index.html"> HOME </li>
+  <ul>
+  
+    <li onclick="navigate(this)"><a href="#"><div id="entireDiv">
+  <form autocomplete="off" action="https://www.google.com">
+    <div class="autocomplete">
+      <input id="myInput" type="text" name="Euro Garage"
+             placeholder="Search...">
+    </div>
+  </form></a></li>
+ 
+    
+    <center><li onclick="navigate(this)" class="logo"><a href="#"><img id="myHeader" src="https://cdn-icons-png.flaticon.com/512/145/145188.png"width=100%;></a></li></center>
+    <li><a href = "index.html"> HOME </a></li>
+  </form></a></li>
 
-  </nav>
+  </ul>
+</nav>
+  
+  
+  
+  
   <center><img src = "https://media.gq.com/photos/5ce05d21bacbf2734621bf31/4:3/w_3700,h_2775,c_limit/GettyImages-967191120.jpg"height=500px></center>
-  <br>
-   <p> My Favorite Players </p>
-  <ol type="I" start="1">
-    <li> Pat Kavanaugh </li>
-    <li> Tucker Dordevic </li>
-    <li> Jeff Teat </li>
-  </ol>
-  <br>
- <table>
+ <center><table>
    <tr>
      <th> Player </th>
      <th> Team </th>
@@ -67,28 +78,70 @@
 
 </body>
 </html>
-    
+
 <style>
-    nav{
+  nav{
   list-style-type: none;
-  position: fixed; 
   width: 100vw;
   background-color: lightgrey;
   left: 0;
   top:0;
+  z-index:100;
+  text-shadow: 2px 2px 5px ;
+  position:fixed;
+
 }
 .navli{
-  display:inline;
-  float:right;
-  padding: 11px;
+  display:inline;  
+  right: 0;
+  padding: 15px;
 }
 a{
   text-decoration: none;
-  color: salmon
+  font-family: Helvetica;
 }
-li:hover{
-  font-weight:bold
+* {box-sizing:border-box}
+
+nav img {
+  max-width: 200px;
 }
+
+nav ul {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+/*   border: red 1px solid; */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+/*   border: 1px yellow solid; */
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+nav a:hover {
+/*   background: bisque;
+  color: black; */
+  transition: .75s;
+  color: #FDE27E;
+}
+
+.main span::before {
+  content: "\a";
+  white-space: pre;
+}
+
 body{
   background-color:#465775;
   color: salmon;
@@ -112,4 +165,93 @@ tr:hover{
 tr:nth-child(odd) {
   background-color: lightgrey;
 }
-    </style> 
+</style>
+
+<script>
+  function autocomplete(inp, arr) {
+
+  var currentFocus;
+
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+
+      this.parentNode.appendChild(a);
+
+      for (i = 0; i < arr.length; i++) {
+
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+
+          b = document.createElement("DIV");
+
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+
+          b.addEventListener("click", function(e) {
+
+              inp.value = this.getElementsByTagName("input")[0].value;
+
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        currentFocus++;
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        currentFocus--;
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        e.preventDefault();
+        if (currentFocus > -1) {
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    if (!x) return false;
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+var autoAnswers = ["Pat Kavanaugh", "Tucker Dordevic", "Brendan Curry", "Chris Gray", "CJ Kirst", "Logan Wisnauskas", "Dylan Watson", "8", "9", "10", "11", "12",];
+
+autocomplete(document.getElementById("myInput"), autoAnswers);
+
+</script>
